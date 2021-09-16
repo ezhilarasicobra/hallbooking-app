@@ -6,7 +6,7 @@ const mongodb = require("mongodb");
 const mongoclient = mongodb.MongoClient;
 app.use(express.json());
 const url="mongodb://localhost:27017"
-app.post("/createroom",async (req,res)=>{
+app.post("https://hallbokkingapp.herokuapp.com/createroom",async (req,res)=>{
 try{
   //connect to db
 let client = await  mongoclient.connect(url);
@@ -26,7 +26,7 @@ res.json({
    })
  }
 })
-app.post("/bookroom",async (req,res)=>{
+app.post("https://hallbokkingapp.herokuapp.com/bookroom",async (req,res)=>{
   try{
     //connect to db
   let client = await  mongoclient.connect(url);
@@ -46,7 +46,7 @@ app.post("/bookroom",async (req,res)=>{
      })
    }
   })
-app.get("/getbookingdetails",async (req,res)=>{
+app.get("https://hallbokkingapp.herokuapp.com/getbookingdetails",async (req,res)=>{
 
   try{
     //connect to db
